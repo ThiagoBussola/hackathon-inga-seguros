@@ -1,7 +1,7 @@
 {
-  "name": "thiago-bussola-test-gazin",
+  "name": "Inga Seguros",
   "version": "0.0.3",
-  "description": "A guide to REST API using Typescript created for Toptal blog",
+  "description": "A Hackathon inga Seguros API",
   "main": "index.js",
   "scripts": {
     "start": "tsc && node --unhandled-rejections=strict ./dist/app.js",
@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ThiagoBussola/teste-gazin.git"
+    "url": "https://github.com/ThiagoBussola/hackathon-inga-seguros.git"
   },
   "keywords": [
     "REST",

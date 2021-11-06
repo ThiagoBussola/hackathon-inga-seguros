@@ -15,8 +15,8 @@ services:
       - MONGO_DB=$MONGO_DB
     depends_on: 
       - mongo
-    container_name: 'gazin-app'
-    image: gazin-app
+    container_name: 'inga-seguros-app'
+    image: inga-seguros-app
     ports:
       - "3000:3000"
   nettools:
