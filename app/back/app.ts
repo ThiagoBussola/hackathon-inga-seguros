@@ -13,6 +13,7 @@ import debug from 'debug'
 import helmet from 'helmet'
 import swaggerUI from 'swagger-ui-express'
 import swaggerFile from './swagger.json'
+import { InsurancesRoutes } from 'insurance/developers.routes.config'
 
 const dotenvResult = dotenv.config()
 if (dotenvResult.error) {
@@ -59,6 +60,7 @@ app.use(expressWinston.logger(loggerOptions))
 routes.push(new UsersRoutes(app))
 routes.push(new AuthRoutes(app))
 routes.push(new DevelopersRoutes(app))
+routes.push(new InsurancesRoutes(app))
 
 app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerFile))
 
