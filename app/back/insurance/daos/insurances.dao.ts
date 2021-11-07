@@ -1,6 +1,6 @@
 import { CreateInsuranceDto } from '../dto/create.insurance.dto'
 import { PutInsuranceDto } from '../dto/put.insurance.dto'
-import InsuranceModel from 'insurance/model/insurance.model'
+import InsuranceModel from '../model/insurance.model'
 import { v4 as uuid4 } from 'uuid'
 import debug from 'debug'
 
@@ -8,7 +8,7 @@ const log: debug.IDebugger = debug('app:in-memory-dao')
 
 class InsurancesDao {
   constructor () {
-    log('Created new instance of DevelopersDao')
+    log('Created new instance of InsurancesDao')
   }
 
   async addDInsurance (insuranceFields: CreateInsuranceDto) {

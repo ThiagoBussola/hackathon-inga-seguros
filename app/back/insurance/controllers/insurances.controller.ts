@@ -15,12 +15,6 @@ class InsuranceController {
 
   async listInsurances (req: express.Request, res: express.Response) {
     try {
-      const nome = req.query.nome as string
-      const sexo = req.query.sexo as string
-      // we are accepting number as a string as it will be passed by the request parameter
-      const idade = req.query.idade as string
-      const hobby = req.query.hobby as string
-
       const insurances = await insurancesService.listInsurances(100, 0)
       res.status(200).send(insurances)
     } catch (err) {

@@ -4,7 +4,6 @@ import  InsurancesMiddleware from './middleware/insurances.middleware'
 import jwtMiddleware from '../auth/middleware/jwt.middleware'
 
 import express from 'express'
-import insurancesController from './controllers/insurances.controller'
 
 export class InsurancesRoutes extends CommonRoutesConfig {
   constructor (app: express.Application) {

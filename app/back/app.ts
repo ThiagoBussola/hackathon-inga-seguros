@@ -8,12 +8,13 @@ import cors from 'cors'
 import { CommonRoutesConfig } from './common/common.routes.config'
 import { UsersRoutes } from './users/users.routes.config'
 import { ProductsRoutes } from './product/products.routes.config'
+import { BrokersRoutes } from './broker/brokers.routes.config'
+import { InsurancesRoutes } from './insurance/insurances.routes.config'
 import { AuthRoutes } from './auth/auth.routes.config'
 import debug from 'debug'
 import helmet from 'helmet'
 import swaggerUI from 'swagger-ui-express'
 import swaggerFile from './swagger.json'
-import { InsurancesRoutes } from 'insurance/developers.routes.config'
 
 const dotenvResult = dotenv.config()
 if (dotenvResult.error) {
@@ -61,6 +62,7 @@ routes.push(new UsersRoutes(app))
 routes.push(new AuthRoutes(app))
 routes.push(new InsurancesRoutes(app))
 routes.push(new ProductsRoutes(app))
+routes.push(new BrokersRoutes(app))
 
 app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerFile))
 
