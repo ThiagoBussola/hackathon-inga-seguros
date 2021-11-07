@@ -7,6 +7,7 @@ import * as expressWinston from 'express-winston'
 import cors from 'cors'
 import { CommonRoutesConfig } from './common/common.routes.config'
 import { UsersRoutes } from './users/users.routes.config'
+import { ProductsRoutes } from './product/products.routes.config'
 import { AuthRoutes } from './auth/auth.routes.config'
 import { DevelopersRoutes } from './developers/developers.routes.config'
 import debug from 'debug'
@@ -59,6 +60,7 @@ app.use(expressWinston.logger(loggerOptions))
 routes.push(new UsersRoutes(app))
 routes.push(new AuthRoutes(app))
 routes.push(new DevelopersRoutes(app))
+routes.push(new ProductsRoutes(app))
 
 app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerFile))
 

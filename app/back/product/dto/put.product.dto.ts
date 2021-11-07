@@ -1,4 +1,4 @@
-export interface PutUserDto {
+export interface PutProductDto {
   name?: string
   code?: string
   covers?: string

@@ -1,6 +1,6 @@
-import { CreateUserDto } from '../dto/create.product.dto'
-import { PatchUserDto } from '../dto/patch.user.dto'
-import { PutUserDto } from '../dto/put.product.dto'
+import { CreateProductDto } from '../dto/create.product.dto'
+import { PatchProductDto } from '../dto/patch.product.dto'
+import { PutProductDto } from '../dto/put.product.dto'
 import ProductModel from '../model/product.model'
 
 import { v4 as uuid4 } from 'uuid'
@@ -13,7 +13,7 @@ class ProductsDao {
     log('Created new instance of ProductssDao')
   }
 
-  async addProduct (productFields: CreateUserDto) {
+  async addProduct (productFields: CreateProductDto) {
     const productId = uuid4()
     const product = await ProductModel.Product.create({
       _id: productId,
@@ -37,7 +37,7 @@ class ProductsDao {
   }
 
   // AJUSTAR PATCH USER DTO
-  async updateProductById (productId: string, productFields: PatchUserDto | PutUserDto) {
+  async updateProductById (productId: string, productFields: PatchProductDto | PutProductDto) {
     const existingUser = ProductModel.Product.findByIdAndUpdate(productId,
       { $set: productFields },
       { new: true }
