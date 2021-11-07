@@ -1,9 +1,9 @@
 import mongooseService from '../../common/services/mongoose.service'
 
-class UserModel {
+class ProductModel {
   Schema = mongooseService.getMongoose().Schema
 
-  userSchema = new this.Schema({
+  productSchema = new this.Schema({
     _id: String,
     email: {
       type: String,
@@ -30,7 +30,7 @@ class UserModel {
   },
   { id: false, timestamps: true })
 
-  User = mongooseService.getMongoose().model('Users', this.userSchema)
+  Product = mongooseService.getMongoose().model('Products', this.productSchema)
 }
 
-export default new UserModel()
+export default new ProductModel()

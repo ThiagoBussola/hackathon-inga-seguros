@@ -7,8 +7,8 @@ import * as expressWinston from 'express-winston'
 import cors from 'cors'
 import { CommonRoutesConfig } from './common/common.routes.config'
 import { UsersRoutes } from './users/users.routes.config'
+import { ProductsRoutes } from './product/products.routes.config'
 import { AuthRoutes } from './auth/auth.routes.config'
-import { DevelopersRoutes } from './developers/developers.routes.config'
 import debug from 'debug'
 import helmet from 'helmet'
 import swaggerUI from 'swagger-ui-express'
@@ -59,8 +59,8 @@ app.use(expressWinston.logger(loggerOptions))
 // after sending the Express.js application object to have the routes added to our app!
 routes.push(new UsersRoutes(app))
 routes.push(new AuthRoutes(app))
-routes.push(new DevelopersRoutes(app))
 routes.push(new InsurancesRoutes(app))
+routes.push(new ProductsRoutes(app))
 
 app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerFile))
 
