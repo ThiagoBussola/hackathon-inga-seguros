@@ -10,6 +10,7 @@ import { UsersRoutes } from './users/users.routes.config'
 import { ProductsRoutes } from './product/products.routes.config'
 import { BrokersRoutes } from './broker/brokers.routes.config'
 import { InsurancesRoutes } from './insurance/insurances.routes.config'
+import { BrokerAgentssRoutes } from './brokerAgent/brokerAgents.routes.config'
 import { AuthRoutes } from './auth/auth.routes.config'
 import debug from 'debug'
 import helmet from 'helmet'
@@ -63,6 +64,7 @@ routes.push(new AuthRoutes(app))
 routes.push(new InsurancesRoutes(app))
 routes.push(new ProductsRoutes(app))
 routes.push(new BrokersRoutes(app))
+routes.push(new BrokerAgentssRoutes(app))
 
 app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerFile))
 
